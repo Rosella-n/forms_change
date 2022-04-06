@@ -103,9 +103,9 @@ def login_page(request):
     else:
         form =LoginForm()
  
-    # username = request.POST.get('id_numb')
-    # password = request.POST.get('password')
-    # print(username)
+    username = request.POST.get('id_numb')
+    password = request.POST.get('password')
+    print(username)
   
     
     print('not valid')
@@ -119,9 +119,4 @@ def password_reset(request):
 
 def password_change(request):   
     return render(request, 'registration/password_change_form.html', {})
-
-# def homepage(request):
-#     return render(request, 'home.html', {})
-
-
 
