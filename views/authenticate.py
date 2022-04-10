@@ -93,24 +93,18 @@ def activate(request, uid, token):
 
 def login_page(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        
+        form =LoginForm(request.POST)
         if form.is_valid():
-            
-            # user=form.cleaned_data['staff_id']          
-            user = form.cleaned_data['id_numb']  
-        print(form.id_numb)
+            user = form.cleaned_data['id_number'] 
+            print(user)
+            return HttpResponseRedirect('home')
+
+
     else:
         form =LoginForm()
- 
-    username = request.POST.get('id_numb')
-    password = request.POST.get('password')
-    print(username)
-  
+       
     
-    print('not valid')
-
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'registration/login.html', {'form':form})
     
     
 

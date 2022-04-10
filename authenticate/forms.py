@@ -54,10 +54,10 @@ class SignUpForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    id_numb = forms.CharField( widget=forms.TextInput(attrs={'class': 
+    id_number = forms.CharField( widget=forms.TextInput(attrs={'class': 
     'form-control','placeholder': 'ID Number',}))
-    id_numb.label=''
-    id_numb.required
+    id_number.label=''
+    id_number.required
     
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter Password',}))
     password.label='Password:'
